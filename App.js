@@ -1,21 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// create heading using react
-const heading = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { key: "child", id: "child" }, [
-    React.createElement("h1", { key: "h1" }, "I'm h1 tag"),
-    React.createElement("h2", { key: "h2" }, "I'm h2 tag"),
-  ]),
+const Title = () => {
+  return <h1>Namste React Title</h1>;
+};
 
-  React.createElement("div", { key: "child2", id: "child2" }, [
-    React.createElement("h1", { key: "h1" }, "I'm h1 tag"),
-    React.createElement("h2", { key: "h2" }, "I'm h2 tag"),
-  ]),
-]);
+const HeadingComponent = () => {
+  return (
+    <div className="container">
+      <Title />
+      <h1>Namste React Functional Component</h1>
+    </div>
+  );
+};
 
-// create root using reactDOM
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// render the heading
-root.render(heading);
+root.render(<HeadingComponent />);
